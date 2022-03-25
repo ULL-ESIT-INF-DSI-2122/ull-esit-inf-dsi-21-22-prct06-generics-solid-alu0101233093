@@ -1,8 +1,5 @@
 import 'mocha';
 import { expect } from 'chai';
-import { collectable } from '../src/ejercicio-pe-101';
-import { Searchable } from '../src/ejercicio-pe-101';
-import { SearchableCollection } from '../src/ejercicio-pe-101';
 import { NumericSearchableCollection } from '../src/ejercicio-pe-101';
 import { StringSearchableCollection } from '../src/ejercicio-pe-101';
 
