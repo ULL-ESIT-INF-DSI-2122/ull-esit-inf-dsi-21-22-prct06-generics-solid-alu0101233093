@@ -4,8 +4,8 @@ import { universe } from './ejercicio-1-clases-abstractas';
 export {Star_Wars_fighter, Star_Wars_universe}
 
 class Star_Wars_fighter extends fighter{
-    public lado: string;
-    public edad: number;
+    readonly lado: string;
+    readonly edad: number;
 
     constructor(n: string, al: number, p: number, vi: number, at: number, d: number, ve: number, es: string, eq: string, ed: number){
         super(n,al,p,vi,at,d,ve,es);
@@ -17,7 +17,7 @@ class Star_Wars_fighter extends fighter{
 class Star_Wars_universe extends universe{
     constructor(protected fighters: Star_Wars_fighter[]){ super(fighters,"Star_Wars")}
 
-    imprimir_datos(p: Star_Wars_fighter): void {
+    public imprimir_datos(p: Star_Wars_fighter): void {
         console.log("Datos de " + p.nombre + ":")
         console.log("Universo: Star Wars");
         console.log("Lado de la fuerza: " + p.lado);

@@ -7,7 +7,7 @@ import { fighter, universe } from "./ejercicio-1-clases-abstractas";
 export class combat{
     constructor(private universe1: universe, private universe2: universe){}
 
-    start(mute: boolean): fighter{
+    public start(mute: boolean): fighter{
         let scanf = require('scanf');
         let f1: fighter | undefined;
         let f2: fighter | undefined;
@@ -101,3 +101,6 @@ export class combat{
     }
 
 };
+
+let combate: combat = new combat(UCM, UCM);
+combate.start(false);

@@ -1,13 +1,13 @@
 export abstract class fighter{
-    public nombre: string;
-    public altura: number;
-    public peso: number;
+    readonly nombre: string;
+    readonly altura: number;
+    readonly peso: number;
     public vida: number;
     private vida_max: number;
-    public ataque: number;
-    public defensa: number;
-    public velocidad: number;
-    public estilo_combate: string;
+    readonly ataque: number;
+    readonly defensa: number;
+    readonly velocidad: number;
+    readonly estilo_combate: string;
 
     constructor(n: string, al: number, p: number, vi: number, at: number, d: number, ve: number, es: string){
         this.nombre = n;
@@ -28,7 +28,7 @@ export abstract class fighter{
 
 
 export abstract class universe{
-    constructor(protected fighters: fighter[], public universe_name: string){}
+    constructor(protected fighters: fighter[], readonly universe_name: string){}
 
     public registrar(p: fighter): void {
         this.fighters.push(p);

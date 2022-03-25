@@ -4,9 +4,9 @@ import { universe } from './ejercicio-1-clases-abstractas';
 export {Marvel_fighter, Marvel_universe, UCM}
 
 class Marvel_fighter extends fighter{
-    public nombre_real: string;
-    public equipo: string;
-    public edad: number;
+    readonly nombre_real: string;
+    readonly equipo: string;
+    readonly edad: number;
 
     constructor(n: string, nr: string, al: number, p: number, ed: number, vi: number, at: number, d: number, ve: number, es: string, eq: string){
         super(n,al,p,vi,at,d,ve,es);
@@ -19,7 +19,7 @@ class Marvel_fighter extends fighter{
 class Marvel_universe extends universe{
     constructor(protected fighters: Marvel_fighter[]){ super(fighters,"Marvel")}
 
-    imprimir_datos(p: Marvel_fighter): void {
+    public imprimir_datos(p: Marvel_fighter): void {
         console.log("Datos de " + p.nombre + ":");
         console.log("Universo: Marvel");
         console.log("Nombre real: " + p.nombre_real);

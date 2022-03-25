@@ -4,8 +4,8 @@ import { universe } from './ejercicio-1-clases-abstractas';
 export {One_Piece_fighter, One_Piece_universe}
 
 class One_Piece_fighter extends fighter{
-    public bando: string;
-    public edad: number;
+    readonly bando: string;
+    readonly edad: number;
 
     constructor(n: string, al: number, p: number, vi: number, at: number, d: number, ve: number, es: string, b: string, ed: number){
         super(n,al,p,vi,at,d,ve,es);
@@ -17,7 +17,7 @@ class One_Piece_fighter extends fighter{
 class One_Piece_universe extends universe{
     constructor(protected fighters: One_Piece_fighter[]){ super(fighters,"One_Piece")}
 
-    imprimir_datos(p: One_Piece_fighter): void {
+    public imprimir_datos(p: One_Piece_fighter): void {
         console.log("Datos de " + p.nombre + ":")
         console.log("Universo: One Piece");
         console.log("Bando: " + p.bando);

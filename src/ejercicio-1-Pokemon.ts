@@ -4,8 +4,8 @@ import { universe } from './ejercicio-1-clases-abstractas';
 export {Pokemon_fighter, Pokemon_universe}
 
 class Pokemon_fighter extends fighter{
-    public tipo: string;
-    public id: number;
+    readonly tipo: string;
+    readonly id: number;
 
     constructor(n: string, al: number, p: number, vi: number, at: number, d: number, ve: number, es: string, ti: string, id: number){
         super(n,al,p,vi,at,d,ve,es);
@@ -17,7 +17,7 @@ class Pokemon_fighter extends fighter{
 class Pokemon_universe extends universe{
     constructor(protected fighters: Pokemon_fighter[]){ super(fighters,"Pokemon")}
 
-    imprimir_datos(p: Pokemon_fighter): void {
+    public imprimir_datos(p: Pokemon_fighter): void {
         console.log("Datos de " + p.nombre + ":")
         console.log("Universo: Pokemon");
         console.log("Tipo: " + p.tipo);
