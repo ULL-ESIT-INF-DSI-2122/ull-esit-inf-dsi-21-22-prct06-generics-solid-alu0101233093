@@ -3,6 +3,7 @@
   <h1>Práctica 6. Clases e interfaces genéricas. Principios SOLID</h1>
 </a>
 <p><strong>Nombre:</strong> Leonardo Alfonso Cruz Rodríguez<br><strong>Correo:</strong> <a href="mailto:alu0101233093@ull.edu.es">alu0101233093@ull.edu.es</a><br><strong>Asignatura:</strong> Desarrollo de sistemas informáticos  </p>
+<p><a href="https://coveralls.io/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct06-generics-solid-alu0101233093?branch=master"><img src="https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct06-generics-solid-alu0101233093/badge.svg?branch=master" alt="Coverage Status"></a>  </p>
 
 <a href="#índice" id="índice" style="color: inherit; text-decoration: none;">
   <h2>Índice</h2>
@@ -129,6 +130,78 @@ Para añadir el <code>Batch</code> del cubrimiento al <code>README.md</code> se 
 <a href="#ejercicio-1---el-combate-definitivo" id="ejercicio-1---el-combate-definitivo" style="color: inherit; text-decoration: none;">
   <h2>Ejercicio 1 - El combate definitivo<a name="id1"></a></h2>
 </a>
+<p>Para la realización de este ejercicio he optado por utilizar la siguiente jerarquía de clases:</p>
+<ul>
+<li>Clase abstracta Fighter<ul>
+<li>DC fighter</li>
+<li>Marvel fighter</li>
+<li>One Piece fighter</li>
+<li>Pokémon fighter</li>
+<li>Star Wars fighter</li>
+</ul>
+</li>
+<li>Clase abstracta Universe<ul>
+<li>DC universe</li>
+<li>Marvel universe</li>
+<li>One Piece universe</li>
+<li>Pokémon universe</li>
+<li>Star Wars universe</li>
+</ul>
+</li>
+<li>Clase combat</li>
+</ul>
+<p>La justificación de la jerarquía es que hay atributos y métodos que tanto los luchadores como los universos deben tener, sin embargo.
+Al ser <strong>distintos</strong> universos, considero que hay atributos que deben ser <u>únicos</u> en cada universo.<br>La clase Fighter almacena los datos comunes y más relevantes de los luchadores, que son:</p>
+<ul>
+<li>Nombre</li>
+<li>Altura</li>
+<li>Peso</li>
+<li>Vida</li>
+<li>Ataque</li>
+<li>Defensa</li>
+<li>Velocidad</li>
+<li>Estilo de combate</li>
+<li>Frase representativa del personaje</li>
+</ul>
+<p>Luego, cada combatiente en su universo tiene sus propios atributos:</p>
+<ul>
+<li><em>DC</em><ul>
+<li><u>Nombre Real</u>: Distinto al nombre de súper héroe</li>
+<li><u>Equipo</u>: Grupo de súper héroes al que pertenece</li>
+<li><u>Edad</u>: Años de vida</li>
+</ul>
+</li>
+<li><em>Marvel</em><ul>
+<li><u>Nombre Real</u>: Distinto al nombre de súper héroe</li>
+<li><u>Equipo</u>: Grupo de súper héroes al que pertenece</li>
+<li><u>Edad</u>: Años de vida</li>
+</ul>
+</li>
+<li><em>One Piece</em><ul>
+<li><u>Bando</u>: Tripulación de piratas o a la Marina</li>
+<li><u>Edad</u>: Años de vida</li>
+<li><u>Haki</u>: Es capáz de usar el Haki</li>
+</ul>
+</li>
+<li><em>Pokémon</em><ul>
+<li><u>Tipo</u>: Tipo del pokémon</li>
+<li><u>ID</u>: Número identificativo</li>
+</ul>
+</li>
+<li><em>Star Wars</em><ul>
+<li><u>Lado</u>: Lado de la fuerza al que pertenece</li>
+<li><u>Edad</u>: Años de vida</li>
+</ul>
+</li>
+</ul>
+<p>La clase abstracta Fighter cumpliendo con el principio <em>Single-Responability</em>, Se encarga de gestionar los atributos de los combatientes. El único atributo que debe ser cambiado a lo largo del combate es la <code>vida</code>, por lo tanto tiene los métodos necesarios para gestionar dicho atributo, que son <code>curar()</code>, <code>herir(daño)</code> y el getter <code>vida_actual()</code>. Cada tipo de universo tiene una manera distinta de representar los datos de los personajes (debido a que no son comunes todos los atributos en todos los universos).
+Por ello, además de los métodos mencionados, se implementó el método abstracto <code>imprimir_datos()</code>. Para que cada clase muestre los datos propios del universo.</p>
+<p>La clase abstracta universe gestiona un conjunto de luchadores del mismo universo. Cumpliendo de nuevo con el principio <em>Single-Responability</em>.
+Para realizar el propósito de esta clase, se utilizan los métodos <code>registrar(fighter)</code> para añadir un nuevo luchador, <code>buscar(nombre)</code> para saber si existe un luchador en el universo (En caso de que sea así, devolvería a dicho luchador) y <code>efectividad(fighter1, fighter2, mute)</code> para calcular la efectividad de un ataque entre dos combatientes según el estilo de combate.</p>
+<p>La clase combat permite almacenar dos universos (iguales o distintos) para enfrentar a los luchadores de ambos universos.
+Acorde a la afirmación anterior, la clase se compone de dos atributos: <code>universe1</code> y <code>universe2</code>. Y de un único método para realizar el combate entre dos luchadores <code>start(fighter universe 1, fighter universe 2, mute)</code>.
+El primero del <code>universe1</code> y el segundo del <code>universe2</code>, el parámetro mute es para mostrar por consola el combate. Si alguno de los luchadores no se encuentran en su respectivo universo, el método devolverá undefined.
+En caso de que ambos luchadores se encuentren en sus universos, se realizará el combate y el método devolverá al ganador del mismo.</p>
 
 <a href="#ejercicio-2---dsiflix" id="ejercicio-2---dsiflix" style="color: inherit; text-decoration: none;">
   <h2>Ejercicio 2 - DSIflix<a name="id2"></a></h2>

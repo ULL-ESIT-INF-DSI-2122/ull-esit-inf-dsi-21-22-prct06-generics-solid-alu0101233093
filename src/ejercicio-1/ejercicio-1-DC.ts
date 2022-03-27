@@ -32,6 +32,24 @@ class DC_fighter extends fighter{
         this.equipo = eq;
         this.edad = ed;
     }
+
+    /**
+     * Método para imprimir los datos de los luchadores de DC
+     */
+    public imprimir_datos(): void {
+        console.log("Datos de " + this.nombre + ":");
+        console.log("Universo: DC");
+        console.log("Nombre real: " + this.nombre_real);
+        console.log("Equipo: " + this.equipo);
+        console.log("Edad: " + this.edad);
+        console.log("Altura: " + this.altura);
+        console.log("Peso: " + this.peso);
+        console.log("HP: " + this.vida_actual());
+        console.log("Ataque: " + this.ataque);
+        console.log("Defensa: " + this.defensa);
+        console.log("Velocidad: " + this.velocidad);
+        console.log("Estilo de combate: " + this.estilo_combate);
+    }
 }
 
 /**
@@ -44,24 +62,6 @@ class DC_universe extends universe{
      */
     constructor(protected fighters: DC_fighter[]){ super(fighters,"DC")}
 
-    /**
-     * Método para imprimir los datos de los luchadores de DC
-     * @param p Luchador del que se desea mostrar los datos
-     */
-    public imprimir_datos(p: DC_fighter): void {
-        console.log("Datos de " + p.nombre + ":");
-        console.log("Universo: DC");
-        console.log("Nombre real: " + p.nombre_real);
-        console.log("Equipo: " + p.equipo);
-        console.log("Edad: " + p.edad);
-        console.log("Altura: " + p.altura);
-        console.log("Peso: " + p.peso);
-        console.log("HP: " + p.vida_actual());
-        console.log("Ataque: " + p.ataque);
-        console.log("Defensa: " + p.defensa);
-        console.log("Velocidad: " + p.velocidad);
-        console.log("Estilo de combate: " + p.estilo_combate);
-    }
 };
 
 let Super_man: DC_fighter = new DC_fighter("SuperMan", "Clark Kent / Kal-El", 1.91, 102, 38, 150, 250, 400, 250, "cuerpo a cuerpo", "La Liga de la Justicia", "Las grandes cosas de hoy, surgen de las cenizas del ayer");

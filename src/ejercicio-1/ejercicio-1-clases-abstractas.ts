@@ -63,6 +63,12 @@ export abstract class fighter{
     public vida_actual(): number{
         return this.vida;
     }
+
+    /**
+     * Imprime los datos del luchador
+     * @param p Luchador del que se desea imprimir los datos
+     */
+     abstract imprimir_datos(): void;
 };
 
 /**
@@ -85,12 +91,6 @@ export abstract class universe{
     }
 
     /**
-     * Imprime los datos del luchador
-     * @param p Luchador del que se desea imprimir los datos
-     */
-    abstract imprimir_datos(p: fighter): void;
-
-    /**
      * Busca un luchador en el universo según el nombre
      * @param nombre String con el nombre del luchador
      * @returns Undefined en caso de no encontrar al luchador y en caso de que si, devolvería al luchador
@@ -110,7 +110,7 @@ export abstract class universe{
      * @param mute True si no se desea mostrar por pantalla, false en caso contrario
      * @returns El daño que realizaría el luchador 1 al luchador 2
      */
-    public efectivity(f1: fighter, f2:fighter, mute:boolean): number{
+    public efectividad(f1: fighter, f2:fighter, mute:boolean): number{
         let efectividad: number = 1;
         let daño: number = 0;
 

@@ -32,6 +32,24 @@ class Marvel_fighter extends fighter{
         this.equipo = eq;
         this.edad = ed;
     }
+
+    /**
+     * Método para imprimir los datos de los luchadores de Marvel
+     */
+     public imprimir_datos(): void {
+        console.log("Datos de " + this.nombre + ":");
+        console.log("Universo: Marvel");
+        console.log("Nombre real: " + this.nombre_real);
+        console.log("Equipo: " + this.equipo);
+        console.log("Edad: " + this.edad);
+        console.log("Altura: " + this.altura);
+        console.log("Peso: " + this.peso);
+        console.log("HP: " + this.vida_actual());
+        console.log("Ataque: " + this.ataque);
+        console.log("Defensa: " + this.defensa);
+        console.log("Velocidad: " + this.velocidad);
+        console.log("Estilo de combate: " + this.estilo_combate);
+    }
 }
 
 /**
@@ -43,25 +61,6 @@ class Marvel_universe extends universe{
      * @param fighters Grupo de luchadores del universo de Marvel
      */
     constructor(protected fighters: Marvel_fighter[]){ super(fighters,"Marvel")}
-
-    /**
-     * Método para imprimir los datos de los luchadores de Marvel
-     * @param p Luchador del que se desea mostrar los datos
-     */
-    public imprimir_datos(p: Marvel_fighter): void {
-        console.log("Datos de " + p.nombre + ":");
-        console.log("Universo: Marvel");
-        console.log("Nombre real: " + p.nombre_real);
-        console.log("Equipo: " + p.equipo);
-        console.log("Edad: " + p.edad);
-        console.log("Altura: " + p.altura);
-        console.log("Peso: " + p.peso);
-        console.log("HP: " + p.vida_actual());
-        console.log("Ataque: " + p.ataque);
-        console.log("Defensa: " + p.defensa);
-        console.log("Velocidad: " + p.velocidad);
-        console.log("Estilo de combate: " + p.estilo_combate);
-    }
 };
 
 let Iron_Man: Marvel_fighter = new Marvel_fighter("IronMan", "Tony Stark", 1.98, 102, 53, 150, 200, 230, 150, "armas","Los Vengadores", "Si no podremos salvar la Tierra, te juro que la vengaremos");

@@ -41,9 +41,9 @@ export class combat{
             console.log(f2.nombre + ": \"" + f2.frase + "\"");
             console.log("¡EL COMBATE ENTRE " + f1.nombre.toUpperCase() + " Y " + f2.nombre.toUpperCase() + " HA COMENZADO!")
             console.log("\n");
-            this.universe1.imprimir_datos(f1);
+            f1.imprimir_datos();
             console.log("\n");
-            this.universe2.imprimir_datos(f2);
+            f2.imprimir_datos();
             console.log("\n");
         }
 
@@ -59,7 +59,7 @@ export class combat{
                 if (!mute)
                     console.log(f1.nombre + " ha atacado a " + f2.nombre)
 
-                daño = this.universe1.efectivity(f1,f2,mute);
+                daño = this.universe1.efectividad(f1,f2,mute);
                 if (daño <= f2.vida_actual())
                     f2.herir(daño);
                 else
@@ -77,7 +77,7 @@ export class combat{
 
                 if (!mute)
                     console.log(f2.nombre + " ha atacado a " + f1.nombre)
-                daño = this.universe2.efectivity(f2,f1,mute);
+                daño = this.universe2.efectividad(f2,f1,mute);
                 if (daño <= f1.vida_actual())
                     f1.herir(daño);
                 else

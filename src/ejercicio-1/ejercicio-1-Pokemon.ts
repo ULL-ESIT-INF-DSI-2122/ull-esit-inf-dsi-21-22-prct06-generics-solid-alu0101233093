@@ -29,6 +29,23 @@ class Pokemon_fighter extends fighter{
         this.tipo = ti;
         this.id = id;
     }
+
+    /**
+     * Método para imprimir los datos de los luchadores de Pokémon
+     */
+    public imprimir_datos(): void {
+        console.log("Datos de " + this.nombre + ":")
+        console.log("Universo: Pokemon");
+        console.log("Tipo: " + this.tipo);
+        console.log("ID: " + this.id);
+        console.log("Altura: " + this.altura);
+        console.log("Peso: " + this.peso);
+        console.log("HP: " + this.vida_actual());
+        console.log("Ataque: " + this.ataque);
+        console.log("Defensa: " + this.defensa);
+        console.log("Velocidad: " + this.velocidad);
+        console.log("Estilo de combate: " + this.estilo_combate);
+    }
 }
 
 /**
@@ -40,24 +57,6 @@ class Pokemon_universe extends universe{
      * @param fighters Grupo de luchadores del universo de Pokémon
      */
     constructor(protected fighters: Pokemon_fighter[]){ super(fighters,"Pokemon")}
-
-    /**
-     * Método para imprimir los datos de los luchadores de Pokémon
-     * @param p Luchador del que se desea mostrar los datos
-     */
-    public imprimir_datos(p: Pokemon_fighter): void {
-        console.log("Datos de " + p.nombre + ":")
-        console.log("Universo: Pokemon");
-        console.log("Tipo: " + p.tipo);
-        console.log("ID: " + p.id);
-        console.log("Altura: " + p.altura);
-        console.log("Peso: " + p.peso);
-        console.log("HP: " + p.vida_actual());
-        console.log("Ataque: " + p.ataque);
-        console.log("Defensa: " + p.defensa);
-        console.log("Velocidad: " + p.velocidad);
-        console.log("Estilo de combate: " + p.estilo_combate);
-    }
 };
 
 let Kecleon: Pokemon_fighter = new Pokemon_fighter("Kecleon", 1, 22, 60, 90, 70, 40, "sigilo", "Normal", 352, "¡Kecleon, Kecleon!");

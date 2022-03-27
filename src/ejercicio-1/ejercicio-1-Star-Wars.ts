@@ -29,6 +29,24 @@ class SW_fighter extends fighter{
         this.lado = l;
         this.edad = ed;
     }
+
+    /**
+     * Método para imprimir los datos de los luchadores de Star Wars
+     * @param p Luchador del que se desea mostrar los datos
+     */
+    public imprimir_datos(): void {
+        console.log("Datos de " + this.nombre + ":")
+        console.log("Universo: Star Wars");
+        console.log("Lado de la fuerza: " + this.lado);
+        console.log("Edad: " + this.edad);
+        console.log("Altura: " + this.altura);
+        console.log("Peso: " + this.peso);
+        console.log("HP: " + this.vida_actual());
+        console.log("Ataque: " + this.ataque);
+        console.log("Defensa: " + this.defensa);
+        console.log("Velocidad: " + this.velocidad);
+        console.log("Estilo de combate: " + this.estilo_combate);
+    }
 }
 
 /**
@@ -40,24 +58,6 @@ class SW_universe extends universe{
      * @param fighters Grupo de luchadores del universo de Star Wars
      */
     constructor(protected fighters: SW_fighter[]){ super(fighters,"SW")}
-
-    /**
-     * Método para imprimir los datos de los luchadores de Star Wars
-     * @param p Luchador del que se desea mostrar los datos
-     */
-    public imprimir_datos(p: SW_fighter): void {
-        console.log("Datos de " + p.nombre + ":")
-        console.log("Universo: Star Wars");
-        console.log("Lado de la fuerza: " + p.lado);
-        console.log("Edad: " + p.edad);
-        console.log("Altura: " + p.altura);
-        console.log("Peso: " + p.peso);
-        console.log("HP: " + p.vida_actual());
-        console.log("Ataque: " + p.ataque);
-        console.log("Defensa: " + p.defensa);
-        console.log("Velocidad: " + p.velocidad);
-        console.log("Estilo de combate: " + p.estilo_combate);
-    }
 };
 
 let Yoda: SW_fighter = new SW_fighter("Yoda", 0.66, 13, 900, 180, 150, 100, 160, "armas", "Luminoso", "Imposible nada es. Difícil, muchas son");

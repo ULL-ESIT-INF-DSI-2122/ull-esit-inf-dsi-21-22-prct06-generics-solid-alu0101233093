@@ -3,6 +3,8 @@
 **Correo:** alu0101233093@ull.edu.es  
 **Asignatura:** Desarrollo de sistemas informáticos  
 
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct06-generics-solid-alu0101233093/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct06-generics-solid-alu0101233093?branch=master)  
+
 ## Índice
 - [Creación del directorio de trabajo y tareas previas](#id0)
 - [Debugger TypeScript en VSC](#id0.1)
@@ -272,6 +274,67 @@ Ahora cuando ejecutemos por consola `npm run coverage` en la página del reposit
 Para añadir el `Batch` del cubrimiento al `README.md` se copiará directamente de la página y se pegará en el fichero.
 
 ## Ejercicio 1 - El combate definitivo<a name="id1"></a>
+Para la realización de este ejercicio he optado por utilizar la siguiente jerarquía de clases:
+
+- Clase abstracta Fighter
+  - DC fighter
+  - Marvel fighter
+  - One Piece fighter
+  - Pokémon fighter
+  - Star Wars fighter
+- Clase abstracta Universe
+  - DC universe
+  - Marvel universe
+  - One Piece universe
+  - Pokémon universe
+  - Star Wars universe
+- Clase combat
+
+La justificación de la jerarquía es que hay atributos y métodos que tanto los luchadores como los universos deben tener, sin embargo.
+Al ser **distintos** universos, considero que hay atributos que deben ser <u>únicos</u> en cada universo.  
+La clase Fighter almacena los datos comunes y más relevantes de los luchadores, que son:
+
+- Nombre
+- Altura
+- Peso
+- Vida
+- Ataque
+- Defensa
+- Velocidad
+- Estilo de combate
+- Frase representativa del personaje
+
+Luego, cada combatiente en su universo tiene sus propios atributos:
+
+- *DC*
+  - <u>Nombre Real</u>: Distinto al nombre de súper héroe
+  - <u>Equipo</u>: Grupo de súper héroes al que pertenece
+  - <u>Edad</u>: Años de vida
+- *Marvel*
+  - <u>Nombre Real</u>: Distinto al nombre de súper héroe
+  - <u>Equipo</u>: Grupo de súper héroes al que pertenece
+  - <u>Edad</u>: Años de vida
+- *One Piece*
+  - <u>Bando</u>: Tripulación de piratas o a la Marina
+  - <u>Edad</u>: Años de vida
+  - <u>Haki</u>: Es capáz de usar el Haki
+- *Pokémon*
+  - <u>Tipo</u>: Tipo del pokémon
+  - <u>ID</u>: Número identificativo
+- *Star Wars*
+  - <u>Lado</u>: Lado de la fuerza al que pertenece
+  - <u>Edad</u>: Años de vida
+
+La clase abstracta Fighter cumpliendo con el principio _Single-Responability_, Se encarga de gestionar los atributos de los combatientes. El único atributo que debe ser cambiado a lo largo del combate es la `vida`, por lo tanto tiene los métodos necesarios para gestionar dicho atributo, que son `curar()`, `herir(daño)` y el getter `vida_actual()`. Cada tipo de universo tiene una manera distinta de representar los datos de los personajes (debido a que no son comunes todos los atributos en todos los universos).
+Por ello, además de los métodos mencionados, se implementó el método abstracto `imprimir_datos()`. Para que cada clase muestre los datos propios del universo.
+
+La clase abstracta universe gestiona un conjunto de luchadores del mismo universo. Cumpliendo de nuevo con el principio _Single-Responability_.
+Para realizar el propósito de esta clase, se utilizan los métodos `registrar(fighter)` para añadir un nuevo luchador, `buscar(nombre)` para saber si existe un luchador en el universo (En caso de que sea así, devolvería a dicho luchador) y `efectividad(fighter1, fighter2, mute)` para calcular la efectividad de un ataque entre dos combatientes según el estilo de combate.
+
+La clase combat permite almacenar dos universos (iguales o distintos) para enfrentar a los luchadores de ambos universos.
+Acorde a la afirmación anterior, la clase se compone de dos atributos: `universe1` y `universe2`. Y de un único método para realizar el combate entre dos luchadores `start(fighter universe 1, fighter universe 2, mute)`.
+El primero del `universe1` y el segundo del `universe2`, el parámetro mute es para mostrar por consola el combate. Si alguno de los luchadores no se encuentran en su respectivo universo, el método devolverá undefined.
+En caso de que ambos luchadores se encuentren en sus universos, se realizará el combate y el método devolverá al ganador del mismo.
 
 ## Ejercicio 2 - DSIflix<a name="id2"></a>
 
