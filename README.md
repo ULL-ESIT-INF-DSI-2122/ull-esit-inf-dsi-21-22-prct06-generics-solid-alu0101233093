@@ -341,6 +341,20 @@ A continuación se muestra un ejemplo de combate:
 A continuación se muestran los tests:  
 
 ## Ejercicio 2 - DSIflix<a name="id2"></a>
+Para la realización de este ejercicio he optado por utilizar la siguiente jerarquía de clases:
+
+- Interfaz `Stream`
+  - Clase abstracta `Basic Stream`
+    - Clase `Serie`
+    - Clase `Película`
+    - Clase `Documental`
+- Interfaz `Streameable`
+  - Clase abstracta `BasicStreameableCollection`
+    - Clase `SerieCollection`
+    - Clase `PelículaCollection`
+    - Clase `DocumentalCollection`
+
+A partir de las interfaces se define los atributos y métodos comunes tanto en las colleciones como en los objetos de streaming. Como los objetos de streaming no solo tienen algunos atributos distintos, si no también métodos de ordenación distintos (relacionados con los atributos no comunes mencionados) es necesario implementar clases heredadas de las abstractas con la definición de sus métodos propios. 
 
 A continuación se muestran los tests:  
 
