@@ -7,25 +7,16 @@ import { fighter, universe } from "./ejercicio-1-clases-abstractas";
 export class combat{
     constructor(private universe1: universe, private universe2: universe){}
 
-    public start(mute: boolean): fighter{
-        let scanf = require('scanf');
-        let f1: fighter | undefined;
-        let f2: fighter | undefined;
+    public start(mute: boolean = false, f1string: string, f2string: string): fighter | undefined{
+        let f1: fighter | undefined = this.universe1.buscar(f1string);
+        let f2: fighter | undefined = this.universe2.buscar(f2string);
         
-        while(typeof f1 === "undefined" || typeof f2 === "undefined"){
-            console.log("Introduce el nombre del combatiente 1 del universo de %s", this.universe1.universe_name);
-            let s1:string = "Dr.Strange"//scanf('%s');
-            f1 = this.universe1.buscar(s1);
-            console.log("Introduce el nombre del combatiente 2 del universo de %s", this.universe2.universe_name);
-            let s2:string = "Thanos"//scanf('%s');
-            f2 = this.universe1.buscar(s2);
-
-            if(typeof f1 === "undefined" && typeof f2 === "undefined")
-                console.log("Ninguno de los dos combatientes introducidos existen en sus respectivos universos\n");
-            else if(typeof f1 === "undefined")
-                console.log("El combatiente 1 no existe en el universo %s\n",this.universe1.universe_name);
-            else if(typeof f2 === "undefined")
-                console.log("El combatiente 2 no existe en el universo %s\n",this.universe2.universe_name);
+        if(typeof f1 === "undefined"){
+            console.log("El combatiente 1 no existe en el universo %s\n",this.universe1.universe_name);
+            return undefined;
+        } if(typeof f2 === "undefined"){
+            console.log("El combatiente 2 no existe en el universo %s\n",this.universe2.universe_name);
+            return undefined;
         }
 
         let turno1: number = f1.velocidad;
@@ -101,6 +92,3 @@ export class combat{
     }
 
 };
-
-let combate: combat = new combat(UCM, UCM);
-combate.start(false);

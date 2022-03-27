@@ -1,7 +1,7 @@
 import { fighter } from './ejercicio-1-clases-abstractas';
 import { universe } from './ejercicio-1-clases-abstractas';
 
-export {DC_fighter, DC_universe}
+export {DC_fighter, DC_universe, UCDC}
 
 class DC_fighter extends fighter{
     readonly nombre_real: string;
@@ -30,7 +30,12 @@ class DC_universe extends universe{
         console.log("HP: " + p.vida);
         console.log("Ataque: " + p.ataque);
         console.log("Defensa: " + p.defensa);
-        console.log("Estilo de combate: " + p.estilo_combate);
         console.log("Velocidad: " + p.velocidad);
+        console.log("Estilo de combate: " + p.estilo_combate);
     }
 };
+
+let Super_man: DC_fighter = new DC_fighter("SuperMan", "Clark Kent / Kal-El", 1.91, 102, 38, 150, 250, 400, 250, "cuerpo a cuerpo", "La Liga de la Justicia");
+let Green_Lantern: DC_fighter = new DC_fighter("Green Lantern", "Hal jordan", 1.82, 91, 35, 150, 170, 170, 200, "distancia", "La liga de la Justicia")
+
+let UCDC: DC_universe = new DC_universe([Super_man, Green_Lantern]);

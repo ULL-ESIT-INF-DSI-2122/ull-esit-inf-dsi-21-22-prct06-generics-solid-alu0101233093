@@ -27,7 +27,7 @@ class One_Piece_universe extends universe{
         console.log("HP: " + p.vida);
         console.log("Ataque: " + p.ataque);
         console.log("Defensa: " + p.defensa);
-        console.log("Estilo de combate: " + p.estilo_combate);
         console.log("Velocidad: " + p.velocidad);
+        console.log("Estilo de combate: " + p.estilo_combate);
     }
 };

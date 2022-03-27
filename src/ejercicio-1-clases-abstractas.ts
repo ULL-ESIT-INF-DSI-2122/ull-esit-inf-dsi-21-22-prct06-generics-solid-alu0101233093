@@ -3,7 +3,7 @@ export abstract class fighter{
     readonly altura: number;
     readonly peso: number;
     public vida: number;
-    private vida_max: number;
+    readonly vida_max: number;
     readonly ataque: number;
     readonly defensa: number;
     readonly velocidad: number;
@@ -21,7 +21,7 @@ export abstract class fighter{
         this.estilo_combate = es;
     }
 
-    curar(): void{
+    public curar(): void{
         this.vida = this.vida_max;
     }
 };
@@ -37,15 +37,11 @@ export abstract class universe{
     abstract imprimir_datos(p: fighter): void;
 
     public buscar(nombre?: string): fighter | undefined {
-        if (typeof nombre === "undefined") {
-            return undefined;
-        } else {
-            let p: fighter | undefined = this.fighters.find((a) => a.nombre == nombre)
+        let p: fighter | undefined = this.fighters.find((a) => a.nombre == nombre)
             if (typeof p === "undefined")
                 return undefined;
             else
                 return p;
-        }
     }
 
     public efectivity(f1: fighter, f2:fighter, mute:boolean): number{
