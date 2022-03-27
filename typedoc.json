@@ -1,6 +1,13 @@
 {
     "entryPoints": [
-        "./src/ejercicio-pe-101.ts"
+        "./src/ejercicio-pe-101.ts",
+        "./src/ejercicio-1/ejercicio-1-clase-combat.ts",        
+        "./src/ejercicio-1/ejercicio-1-clases-abstractas.ts",        
+        "./src/ejercicio-1/ejercicio-1-DC.ts",        
+        "./src/ejercicio-1/ejercicio-1-Marvel.ts",        
+        "./src/ejercicio-1/ejercicio-1-One-Piece.ts",
+        "./src/ejercicio-1/ejercicio-1-Pokemon.ts",        
+        "./src/ejercicio-1/ejercicio-1-Star-Wars.ts"
     ],
     "out": "./docs"
 }

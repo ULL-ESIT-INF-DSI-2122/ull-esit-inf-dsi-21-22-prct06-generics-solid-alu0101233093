@@ -1,13 +1,24 @@
-import { Marvel_fighter, Marvel_universe, UCM } from "./ejercicio-1-Marvel";
-import { DC_fighter, DC_universe } from "./ejercicio-1-DC"
-import { Pokemon_fighter, Pokemon_universe } from "./ejercicio-1-Pokemon"
-import { One_Piece_fighter, One_Piece_universe } from "./ejercicio-1-One-Piece"
 import { fighter, universe } from "./ejercicio-1-clases-abstractas";
 
+/**
+ * @class Clase que almacena a los universos y sus combatientes para enfrentarlos
+ */
 export class combat{
+    /**
+     * Constructor de la clase combat
+     * @param universe1 Universo del primer combatiente
+     * @param universe2 Universo del segundo combatiente
+     */
     constructor(private universe1: universe, private universe2: universe){}
 
-    public start(mute: boolean = false, f1string: string, f2string: string): fighter | undefined{
+    /**
+     * Método que permite el enfrentamiento entre dos combatientes
+     * @param f1string Primer combatiente
+     * @param f2string Segundo combatiente
+     * @param mute Define si se quiere mostrar el combate por consola, por defecto SI se muestra
+     * @returns Combatiente ganador o indefinido en caso de que no se encuentre el combatiente en su respectivo universo
+     */
+    public start(f1string: string, f2string: string, mute: boolean = false): fighter | undefined{
         let f1: fighter | undefined = this.universe1.buscar(f1string);
         let f2: fighter | undefined = this.universe2.buscar(f2string);
         
@@ -26,6 +37,8 @@ export class combat{
         let daño: number = 0;
 
         if (!mute) {
+            console.log(f1.nombre + ": \"" + f1.frase + "\"");
+            console.log(f2.nombre + ": \"" + f2.frase + "\"");
             console.log("¡EL COMBATE ENTRE " + f1.nombre.toUpperCase() + " Y " + f2.nombre.toUpperCase() + " HA COMENZADO!")
             console.log("\n");
             this.universe1.imprimir_datos(f1);
@@ -34,7 +47,7 @@ export class combat{
             console.log("\n");
         }
 
-        while (f1.vida > 0 && f2.vida > 0) {
+        while (f1.vida_actual() > 0 && f2.vida_actual() > 0) {
             if (!mute)
                 console.log("\nRonda número: " + ronda);
             if (turno1 > turno2) {
@@ -47,14 +60,14 @@ export class combat{
                     console.log(f1.nombre + " ha atacado a " + f2.nombre)
 
                 daño = this.universe1.efectivity(f1,f2,mute);
-                if (daño <= f2.vida)
-                    f2.vida -= daño;
+                if (daño <= f2.vida_actual())
+                    f2.herir(daño);
                 else
-                    f2.vida = 0;
+                    f2.herir();
 
                 if (!mute) {
-                    console.log(f1.nombre + " HP: " + f1.vida);
-                    console.log(f2.nombre + " HP: " + f2.vida);
+                    console.log(f1.nombre + " HP: " + f1.vida_actual());
+                    console.log(f2.nombre + " HP: " + f2.vida_actual());
                 }
             } else {
                 if (!turno && ronda != 1 && !mute)
@@ -65,20 +78,20 @@ export class combat{
                 if (!mute)
                     console.log(f2.nombre + " ha atacado a " + f1.nombre)
                 daño = this.universe2.efectivity(f2,f1,mute);
-                if (daño <= f1.vida)
-                    f1.vida -= daño;
+                if (daño <= f1.vida_actual())
+                    f1.herir(daño);
                 else
-                    f1.vida = 0;
+                    f1.herir();
 
                 if (!mute) {
-                    console.log(f1.nombre + " HP: " + f1.vida);
-                    console.log(f2.nombre + " HP: " + f2.vida);
+                    console.log(f1.nombre + " HP: " + f1.vida_actual());
+                    console.log(f2.nombre + " HP: " + f2.vida_actual());
                 }
             }
             ronda++;
         }
 
-        if (f1.vida > f2.vida) {
+        if (f1.vida_actual() > f2.vida_actual()) {
             if (!mute) {
                 console.log("\n¡El combate ha terminado!");
                 console.log("¡El ganador es " + f1.nombre + "!");

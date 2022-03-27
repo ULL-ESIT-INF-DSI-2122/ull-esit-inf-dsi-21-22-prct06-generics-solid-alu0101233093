@@ -1,15 +1,31 @@
+/**
+ * @class Clase que almacena y gestiona los datos de un combatiente
+ */
 export abstract class fighter{
     readonly nombre: string;
     readonly altura: number;
     readonly peso: number;
-    public vida: number;
+    private vida: number;
     readonly vida_max: number;
     readonly ataque: number;
     readonly defensa: number;
     readonly velocidad: number;
     readonly estilo_combate: string;
+    readonly frase: string;
 
-    constructor(n: string, al: number, p: number, vi: number, at: number, d: number, ve: number, es: string){
+    /**
+     * Constructor de la clase fighter
+     * @param n Nombre
+     * @param al Altura
+     * @param p Peso
+     * @param vi Vida
+     * @param at Ataque
+     * @param d Defensa
+     * @param ve Velocidad
+     * @param es Estilo de combate
+     * @param f Frase representativa del personaje
+     */
+    constructor(n: string, al: number, p: number, vi: number, at: number, d: number, ve: number, es: string, f: string){
         this.nombre = n;
         this.altura = al;
         this.peso = p;
@@ -19,23 +35,66 @@ export abstract class fighter{
         this.defensa = d;
         this.velocidad = ve;
         this.estilo_combate = es;
+        this.frase = f;
     }
 
+    /**
+     * @method curar Permite aumentar la vida actual a la vida máxima
+     */
     public curar(): void{
         this.vida = this.vida_max;
     }
+
+    /**
+     * Permite reducir la vida del luchador
+     * @param daño daño realizado, en caso de no pasar ningún parámetro, la vida se pondrá a 0
+     */
+    public herir(daño?: number){
+        if(typeof daño === "undefined")
+            this.vida = 0;
+        else
+            this.vida -= daño;
+    }
+
+    /**
+     * Método getter para obtener la vida actual del luchador
+     * @returns Vida actual del luchador
+     */
+    public vida_actual(): number{
+        return this.vida;
+    }
 };
 
-
+/**
+ * @class Gestiona un universo de luchadores
+ */
 export abstract class universe{
+    /**
+     * Constructor de la clase universe
+     * @param fighters Grupo de luchadores en el universo
+     * @param universe_name Nombre del universo
+     */
     constructor(protected fighters: fighter[], readonly universe_name: string){}
 
+    /**
+     * Permite registrar un nuevo luchador en el universo
+     * @param p Luchador que se desea registrar en el universo
+     */
     public registrar(p: fighter): void {
         this.fighters.push(p);
     }
 
+    /**
+     * Imprime los datos del luchador
+     * @param p Luchador del que se desea imprimir los datos
+     */
     abstract imprimir_datos(p: fighter): void;
 
+    /**
+     * Busca un luchador en el universo según el nombre
+     * @param nombre String con el nombre del luchador
+     * @returns Undefined en caso de no encontrar al luchador y en caso de que si, devolvería al luchador
+     */
     public buscar(nombre?: string): fighter | undefined {
         let p: fighter | undefined = this.fighters.find((a) => a.nombre == nombre)
             if (typeof p === "undefined")
@@ -44,6 +103,13 @@ export abstract class universe{
                 return p;
     }
 
+    /**
+     * Función que calcula la efectividad de los ataques según el estilo de combate.
+     * @param f1 Luchador 1
+     * @param f2 Luchador 2
+     * @param mute True si no se desea mostrar por pantalla, false en caso contrario
+     * @returns El daño que realizaría el luchador 1 al luchador 2
+     */
     public efectivity(f1: fighter, f2:fighter, mute:boolean): number{
         let efectividad: number = 1;
         let daño: number = 0;
