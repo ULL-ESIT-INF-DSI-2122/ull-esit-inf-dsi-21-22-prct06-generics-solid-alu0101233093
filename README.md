@@ -437,19 +437,7 @@ Thanos HP: 0
 
 A continuación se muestran los tests:  
 
-![image](https://user-images.githubusercontent.com/72469549/160304142-eb071e6c-7be2-434e-b587-c5d2a7fd8c9b.png)  
-![image](https://user-images.githubusercontent.com/72469549/160304148-6f62d8d0-7c36-4c31-b266-165029b7dbfc.png)
-![image](https://user-images.githubusercontent.com/72469549/160304152-609f08de-c662-43a2-9952-4be774c74881.png)
-![image](https://user-images.githubusercontent.com/72469549/160304154-66459844-f531-4df7-b8b7-a282e08811ed.png)
-![image](https://user-images.githubusercontent.com/72469549/160304167-a7be53a1-296f-4699-8ba6-15dd3aa04329.png)
-![image](https://user-images.githubusercontent.com/72469549/160304174-5c641701-7bbb-42d7-a0f5-33259625caf0.png)
-![image](https://user-images.githubusercontent.com/72469549/160304181-7ffbe038-d84b-4eef-8151-538d4e03a26c.png)
-![image](https://user-images.githubusercontent.com/72469549/160304185-8488c2f1-5785-4e65-9e4a-8568d9923660.png)
-![image](https://user-images.githubusercontent.com/72469549/160304191-665aa985-1a7e-41a9-a891-ef45d251821f.png)
-![image](https://user-images.githubusercontent.com/72469549/160304197-a066656f-8003-4cdc-b30f-4172412a63aa.png)
-![image](https://user-images.githubusercontent.com/72469549/160304202-97b80ef2-5935-4340-bad1-e84ea0594196.png)
-
-
+![image](https://user-images.githubusercontent.com/72469549/160304344-5b2631f6-04e3-4d67-a1f0-85680caf3c62.png)
 
 ## Ejercicio 2 - DSIflix<a name="id2"></a>
 Para la realización de este ejercicio he optado por utilizar la siguiente jerarquía de clases:
