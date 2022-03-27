@@ -8,6 +8,7 @@
         "./src/ejercicio-1/ejercicio-1-One-Piece.ts",
         "./src/ejercicio-1/ejercicio-1-Pokemon.ts",        
         "./src/ejercicio-1/ejercicio-1-Star-Wars.ts",
+        "./src/ejercicio-2.ts",
         "./src/ejercicio-3.ts"
     ],
     "out": "./docs"
