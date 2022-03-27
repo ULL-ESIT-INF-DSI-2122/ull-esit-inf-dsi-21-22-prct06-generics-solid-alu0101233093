@@ -334,8 +334,19 @@ Para realizar el propósito de esta clase, se utilizan los métodos `registrar(f
 La clase combat permite almacenar dos universos (iguales o distintos) para enfrentar a los luchadores de ambos universos.
 Acorde a la afirmación anterior, la clase se compone de dos atributos: `universe1` y `universe2`. Y de un único método para realizar el combate entre dos luchadores `start(fighter universe 1, fighter universe 2, mute)`.
 El primero del `universe1` y el segundo del `universe2`, el parámetro mute es para mostrar por consola el combate. Si alguno de los luchadores no se encuentran en su respectivo universo, el método devolverá undefined.
-En caso de que ambos luchadores se encuentren en sus universos, se realizará el combate y el método devolverá al ganador del mismo.
+En caso de que ambos luchadores se encuentren en sus universos, se realizará el combate y el método devolverá al ganador del mismo.  
+
+A continuación se muestra un ejemplo de combate:  
+
+A continuación se muestran los tests:  
 
 ## Ejercicio 2 - DSIflix<a name="id2"></a>
 
+A continuación se muestran los tests:  
+
 ## Ejercicio 3 - El cifrado indescifrable<a name="id3"></a>
+Para la clase `Cifrado` he optado por implementar los atributos `alfabeto` y `clave` en el que se basarán el cifrado.
+Dispone de los métodos `cifrar(palabra)` y `descifrar(palabra)` que realizan la operación indicada sobre una palabra dada por parámetro.
+Además de los métodos `getter` y `setter` para los atributos `alfabeto` y `clave`.
+
+A continuación se muestran los tests:  
