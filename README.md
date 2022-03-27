@@ -337,8 +337,119 @@ El primero del `universe1` y el segundo del `universe2`, el parámetro mute es p
 En caso de que ambos luchadores se encuentren en sus universos, se realizará el combate y el método devolverá al ganador del mismo.  
 
 A continuación se muestra un ejemplo de combate:  
+```
+Dr. Strange: "No alteramos las leyes naturales. Las defendemos."
+Thanos: "Hacer desaparecer a la mitad del universo, a eso lo llamo compasión"
+¡EL COMBATE ENTRE DR. STRANGE Y THANOS HA COMENZADO!
+
+
+Datos de Dr. Strange:
+Universo: Marvel
+Nombre real: Stephen Strange
+Equipo: Los Vengadores
+Edad: 45
+Altura: 1.89
+Peso: 81
+HP: 150
+Ataque: 300
+Defensa: 100
+Velocidad: 150
+Estilo de combate: distancia
+
+
+Datos de Thanos:
+Universo: Marvel
+Nombre real: Thanos
+Equipo: Villanos
+Edad: 1000
+Altura: 2.62
+Peso: 448
+HP: 500
+Ataque: 250
+Defensa: 350
+Velocidad: 70
+Estilo de combate: cuerpo a cuerpo
+
+
+
+Ronda número: 1
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 150
+Thanos HP: 414
+
+Ronda número: 2
+¡Dr. Strange es muy rápido, ha conseguido un turno adicional!
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 150
+Thanos HP: 328
+
+Ronda número: 3
+Thanos ha atacado a Dr. Strange
+Daño realizado: 63
+Ataque poco efectivo...
+Dr. Strange HP: 87
+Thanos HP: 328
+
+Ronda número: 4
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 87
+Thanos HP: 242
+
+Ronda número: 5
+¡Dr. Strange es muy rápido, ha conseguido un turno adicional!
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 87
+Thanos HP: 156
+
+Ronda número: 6
+Thanos ha atacado a Dr. Strange
+Daño realizado: 63
+Ataque poco efectivo...
+Dr. Strange HP: 24
+Thanos HP: 156
+
+Ronda número: 7
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 24
+Thanos HP: 70
+
+Ronda número: 8
+¡Dr. Strange es muy rápido, ha conseguido un turno adicional!
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 24
+Thanos HP: 0
+
+¡El combate ha terminado!
+¡El ganador es Dr. Strange!
+```
 
 A continuación se muestran los tests:  
+
+![image](https://user-images.githubusercontent.com/72469549/160304142-eb071e6c-7be2-434e-b587-c5d2a7fd8c9b.png)  
+![image](https://user-images.githubusercontent.com/72469549/160304148-6f62d8d0-7c36-4c31-b266-165029b7dbfc.png)
+![image](https://user-images.githubusercontent.com/72469549/160304152-609f08de-c662-43a2-9952-4be774c74881.png)
+![image](https://user-images.githubusercontent.com/72469549/160304154-66459844-f531-4df7-b8b7-a282e08811ed.png)
+![image](https://user-images.githubusercontent.com/72469549/160304167-a7be53a1-296f-4699-8ba6-15dd3aa04329.png)
+![image](https://user-images.githubusercontent.com/72469549/160304174-5c641701-7bbb-42d7-a0f5-33259625caf0.png)
+![image](https://user-images.githubusercontent.com/72469549/160304181-7ffbe038-d84b-4eef-8151-538d4e03a26c.png)
+![image](https://user-images.githubusercontent.com/72469549/160304185-8488c2f1-5785-4e65-9e4a-8568d9923660.png)
+![image](https://user-images.githubusercontent.com/72469549/160304191-665aa985-1a7e-41a9-a891-ef45d251821f.png)
+![image](https://user-images.githubusercontent.com/72469549/160304197-a066656f-8003-4cdc-b30f-4172412a63aa.png)
+![image](https://user-images.githubusercontent.com/72469549/160304202-97b80ef2-5935-4340-bad1-e84ea0594196.png)
+
+
 
 ## Ejercicio 2 - DSIflix<a name="id2"></a>
 Para la realización de este ejercicio he optado por utilizar la siguiente jerarquía de clases:
@@ -358,9 +469,13 @@ A partir de las interfaces se define los atributos y métodos comunes tanto en l
 
 A continuación se muestran los tests:  
 
+![image](https://user-images.githubusercontent.com/72469549/160304225-36c8614b-8d97-4bed-b458-18cfbc3a6471.png)
+
+
 ## Ejercicio 3 - El cifrado indescifrable<a name="id3"></a>
 Para la clase `Cifrado` he optado por implementar los atributos `alfabeto` y `clave` en el que se basarán el cifrado.
 Dispone de los métodos `cifrar(palabra)` y `descifrar(palabra)` que realizan la operación indicada sobre una palabra dada por parámetro.
 Además de los métodos `getter` y `setter` para los atributos `alfabeto` y `clave`.
 
 A continuación se muestran los tests:  
+![image](https://user-images.githubusercontent.com/72469549/160304238-06633723-42ca-4037-8b54-9c3ef59b793e.png)
