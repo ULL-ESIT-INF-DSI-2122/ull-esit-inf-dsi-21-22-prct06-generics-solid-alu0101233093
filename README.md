@@ -337,8 +337,107 @@ El primero del `universe1` y el segundo del `universe2`, el parámetro mute es p
 En caso de que ambos luchadores se encuentren en sus universos, se realizará el combate y el método devolverá al ganador del mismo.  
 
 A continuación se muestra un ejemplo de combate:  
+```
+Dr. Strange: "No alteramos las leyes naturales. Las defendemos."
+Thanos: "Hacer desaparecer a la mitad del universo, a eso lo llamo compasión"
+¡EL COMBATE ENTRE DR. STRANGE Y THANOS HA COMENZADO!
+
+
+Datos de Dr. Strange:
+Universo: Marvel
+Nombre real: Stephen Strange
+Equipo: Los Vengadores
+Edad: 45
+Altura: 1.89
+Peso: 81
+HP: 150
+Ataque: 300
+Defensa: 100
+Velocidad: 150
+Estilo de combate: distancia
+
+
+Datos de Thanos:
+Universo: Marvel
+Nombre real: Thanos
+Equipo: Villanos
+Edad: 1000
+Altura: 2.62
+Peso: 448
+HP: 500
+Ataque: 250
+Defensa: 350
+Velocidad: 70
+Estilo de combate: cuerpo a cuerpo
+
+
+
+Ronda número: 1
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 150
+Thanos HP: 414
+
+Ronda número: 2
+¡Dr. Strange es muy rápido, ha conseguido un turno adicional!
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 150
+Thanos HP: 328
+
+Ronda número: 3
+Thanos ha atacado a Dr. Strange
+Daño realizado: 63
+Ataque poco efectivo...
+Dr. Strange HP: 87
+Thanos HP: 328
+
+Ronda número: 4
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 87
+Thanos HP: 242
+
+Ronda número: 5
+¡Dr. Strange es muy rápido, ha conseguido un turno adicional!
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 87
+Thanos HP: 156
+
+Ronda número: 6
+Thanos ha atacado a Dr. Strange
+Daño realizado: 63
+Ataque poco efectivo...
+Dr. Strange HP: 24
+Thanos HP: 156
+
+Ronda número: 7
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 24
+Thanos HP: 70
+
+Ronda número: 8
+¡Dr. Strange es muy rápido, ha conseguido un turno adicional!
+Dr. Strange ha atacado a Thanos
+Daño realizado: 86
+¡Ataque super efectivo!
+Dr. Strange HP: 24
+Thanos HP: 0
+
+¡El combate ha terminado!
+¡El ganador es Dr. Strange!
+```
 
 A continuación se muestran los tests:  
+
+![image](https://user-images.githubusercontent.com/72469549/160304344-5b2631f6-04e3-4d67-a1f0-85680caf3c62.png)
 
 ## Ejercicio 2 - DSIflix<a name="id2"></a>
 Para la realización de este ejercicio he optado por utilizar la siguiente jerarquía de clases:
@@ -358,9 +457,13 @@ A partir de las interfaces se define los atributos y métodos comunes tanto en l
 
 A continuación se muestran los tests:  
 
+![image](https://user-images.githubusercontent.com/72469549/160304225-36c8614b-8d97-4bed-b458-18cfbc3a6471.png)
+
+
 ## Ejercicio 3 - El cifrado indescifrable<a name="id3"></a>
 Para la clase `Cifrado` he optado por implementar los atributos `alfabeto` y `clave` en el que se basarán el cifrado.
 Dispone de los métodos `cifrar(palabra)` y `descifrar(palabra)` que realizan la operación indicada sobre una palabra dada por parámetro.
 Además de los métodos `getter` y `setter` para los atributos `alfabeto` y `clave`.
 
 A continuación se muestran los tests:  
+![image](https://user-images.githubusercontent.com/72469549/160304238-06633723-42ca-4037-8b54-9c3ef59b793e.png)
