@@ -48,8 +48,7 @@ export class Random{
  */
 export class RandomNumberCollection implements Iterable<number>{
     private collection_: Set<number>;
-    private counter_: number;
-    private modo_: number;
+    private tam_: number;
 
     /**
      * Constructor de la clase RandomNumberCollection
@@ -57,22 +56,15 @@ export class RandomNumberCollection implements Iterable<number>{
      */
     constructor(tam:number, modo: number, n: number = 0, m: number = 10){
         this.collection_ = new Set<number>();
-        this.modo_ = modo;
-        switch(modo){
-            case 0: for(let i = 0; i < tam ; i++){
-                        const randomInstance: Random = Random.getRandom()
-                        this.collection_.add(randomInstance.randomFloat())
-                    }
-            case 1: for(let i = 0; i < tam ; i++){
-                        const randomInstance: Random = Random.getRandom()
-                        this.collection_.add(randomInstance.random(n,m))
-                    }
-            case 2: for(let i = 0; i < tam ; i++){
-                        const randomInstance: Random = Random.getRandom()
-                        this.collection_.add(randomInstance.randomInt(n,m))
-                    }
+        for(let i = 0; i < tam ; i++){
+            const randomInstance: Random = Random.getRandom()
+            switch(modo){
+                case 0: this.collection_.add(randomInstance.randomFloat()); break;
+                case 1: this.collection_.add(randomInstance.random(n,m)); break;
+                case 2: this.collection_.add(randomInstance.randomInt(n,m)); break;
+            }
         }
-        this.counter_ = tam;
+        this.tam_ = tam;
     }
 
     public get_collection(): Set<number>{
@@ -83,7 +75,7 @@ export class RandomNumberCollection implements Iterable<number>{
      * Método necesario para la plantilla Iterable
      */
     [Symbol.iterator](): Iterator<number> {
-        return new RandomNumberCollection(this.counter_,modo);
+        return this.collection_.values();
     }
 
     /**
@@ -92,7 +84,7 @@ export class RandomNumberCollection implements Iterable<number>{
     public next(): { done: boolean, value: number } {
         return {
             done: false,
-            value: this.counter_++
+            value: this.tam_++
         }
     }
 }
