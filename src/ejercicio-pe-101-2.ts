@@ -54,8 +54,8 @@ export class RandomNumberCollection implements Iterable<number>{
      * Constructor de la clase RandomNumberCollection
      * @param tam tamaño inicial de la colección
      */
-    constructor(tam:number, modo: number, n: number = 0, m: number = 10){
-        this.collection_ = new Set<number>();
+    constructor(tam:number, modo: number, n: number = 0, m: number = tam){
+        this.collection_ = new Set<number>([]);
         for(let i = 0; i < tam ; i++){
             const randomInstance: Random = Random.getRandom()
             switch(modo){
