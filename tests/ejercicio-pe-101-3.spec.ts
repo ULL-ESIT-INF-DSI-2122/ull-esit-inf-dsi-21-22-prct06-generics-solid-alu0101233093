@@ -19,7 +19,7 @@ describe('Tests ejercicio PE 101 06/04/2022 - Clase Subscriptor', () => {
     it('La clase Subscriptor recibe correctamente la notificación de un nuevo número de revista', () => {
         let Marca: Revista = new Revista("Marca","El Atlético de Madrid pierde 1-0 contra el Manchester City", []);
         let updated: string = "---- Nuevo número de la revista " + Marca.get_nombre() + " ----\n";
-        updated += "Marca","El Atlético de Madrid pierde 1-0 contra el Manchester City";
+        updated += "El Atlético de Madrid pierde 1-0 contra el Manchester City";
 
         expect(Leonardo.update(Marca)).to.be.equal(updated);
     })
