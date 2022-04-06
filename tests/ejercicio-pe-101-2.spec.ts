@@ -1,4 +1,4 @@
-import 'mocha';
+/*import 'mocha';
 import { expect } from 'chai';
 import { RandomNumberCollection } from '../src/ejercicio-pe-101-2';
 
@@ -22,4 +22,4 @@ describe('Tests ejercicio PE 101 2\n\n', () => {
     it('La clase genera números aleatorios entre 10 y 15', () => {
         rnc3.get_collection().forEach( i => expect(typeof i).to.be.equal('number'));
 	});
-});
+});*/
